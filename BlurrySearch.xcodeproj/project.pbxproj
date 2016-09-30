@@ -7,50 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C0FE46AC231BA6DB800BE84B /* libPods-BlurrySearch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4979547060B6B0249F93BA /* libPods-BlurrySearch.a */; };
 		FEAE8D201D912814002DF8B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAE8D1F1D912814002DF8B4 /* main.m */; };
 		FEAE8D231D912814002DF8B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAE8D221D912814002DF8B4 /* AppDelegate.m */; };
-		FEAE8D261D912814002DF8B4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAE8D251D912814002DF8B4 /* ViewController.m */; };
 		FEAE8D291D912814002DF8B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEAE8D271D912814002DF8B4 /* Main.storyboard */; };
 		FEAE8D2B1D912814002DF8B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEAE8D2A1D912814002DF8B4 /* Assets.xcassets */; };
 		FEAE8D2E1D912814002DF8B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEAE8D2C1D912814002DF8B4 /* LaunchScreen.storyboard */; };
-		FEAE8D391D912814002DF8B4 /* BlurrySearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAE8D381D912814002DF8B4 /* BlurrySearchTests.m */; };
-		FEAE8D441D912814002DF8B4 /* BlurrySearchUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAE8D431D912814002DF8B4 /* BlurrySearchUITests.m */; };
+		FEAE8D531D912CAE002DF8B4 /* AddressBookController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAE8D521D912CAE002DF8B4 /* AddressBookController.m */; };
+		FEAE8D6F1D912FE8002DF8B4 /* ChineseInclude.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAE8D6C1D912FE8002DF8B4 /* ChineseInclude.m */; };
+		FEAE8D701D912FE8002DF8B4 /* PinYinForObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAE8D6E1D912FE8002DF8B4 /* PinYinForObjc.m */; };
+		FECAFC7E1D921932003EAEDA /* HandleAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = FECAFC7D1D921932003EAEDA /* HandleAddressBook.m */; };
+		FECAFC811D92291B003EAEDA /* PersonInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FECAFC801D92291B003EAEDA /* PersonInfoModel.m */; };
+		FECAFC841D92750E003EAEDA /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FECAFC831D92750E003EAEDA /* TableViewController.m */; };
+		FEDCA7301D94CFD400386783 /* CustomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDCA72F1D94CFD400386783 /* CustomTableViewController.m */; };
+		FEDCA7341D94FE8B00386783 /* SortAlphabetically.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDCA7331D94FE8B00386783 /* SortAlphabetically.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		FEAE8D351D912814002DF8B4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FEAE8D131D912814002DF8B4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FEAE8D1A1D912814002DF8B4;
-			remoteInfo = BlurrySearch;
-		};
-		FEAE8D401D912814002DF8B4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FEAE8D131D912814002DF8B4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FEAE8D1A1D912814002DF8B4;
-			remoteInfo = BlurrySearch;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		2D8EC422431BD9FC834BED68 /* Pods-BlurrySearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlurrySearch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlurrySearch/Pods-BlurrySearch.debug.xcconfig"; sourceTree = "<group>"; };
+		9B1F50E00A4CADCFCFC8FE87 /* Pods-BlurrySearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlurrySearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlurrySearch/Pods-BlurrySearch.release.xcconfig"; sourceTree = "<group>"; };
+		CA4979547060B6B0249F93BA /* libPods-BlurrySearch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BlurrySearch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEAE8D1B1D912814002DF8B4 /* BlurrySearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlurrySearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEAE8D1F1D912814002DF8B4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FEAE8D211D912814002DF8B4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FEAE8D221D912814002DF8B4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FEAE8D241D912814002DF8B4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FEAE8D251D912814002DF8B4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FEAE8D281D912814002DF8B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FEAE8D2A1D912814002DF8B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEAE8D2D1D912814002DF8B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FEAE8D2F1D912814002DF8B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FEAE8D341D912814002DF8B4 /* BlurrySearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlurrySearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FEAE8D381D912814002DF8B4 /* BlurrySearchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlurrySearchTests.m; sourceTree = "<group>"; };
-		FEAE8D3A1D912814002DF8B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FEAE8D3F1D912814002DF8B4 /* BlurrySearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlurrySearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FEAE8D431D912814002DF8B4 /* BlurrySearchUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlurrySearchUITests.m; sourceTree = "<group>"; };
-		FEAE8D451D912814002DF8B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEAE8D511D912CAE002DF8B4 /* AddressBookController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookController.h; sourceTree = "<group>"; };
+		FEAE8D521D912CAE002DF8B4 /* AddressBookController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookController.m; sourceTree = "<group>"; };
+		FEAE8D6B1D912FE8002DF8B4 /* ChineseInclude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChineseInclude.h; sourceTree = "<group>"; };
+		FEAE8D6C1D912FE8002DF8B4 /* ChineseInclude.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChineseInclude.m; sourceTree = "<group>"; };
+		FEAE8D6D1D912FE8002DF8B4 /* PinYinForObjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinYinForObjc.h; sourceTree = "<group>"; };
+		FEAE8D6E1D912FE8002DF8B4 /* PinYinForObjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinYinForObjc.m; sourceTree = "<group>"; };
+		FECAFC7C1D921932003EAEDA /* HandleAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandleAddressBook.h; sourceTree = "<group>"; };
+		FECAFC7D1D921932003EAEDA /* HandleAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandleAddressBook.m; sourceTree = "<group>"; };
+		FECAFC7F1D92291B003EAEDA /* PersonInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonInfoModel.h; sourceTree = "<group>"; };
+		FECAFC801D92291B003EAEDA /* PersonInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonInfoModel.m; sourceTree = "<group>"; };
+		FECAFC821D92750E003EAEDA /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		FECAFC831D92750E003EAEDA /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		FEDCA72E1D94CFD400386783 /* CustomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewController.h; sourceTree = "<group>"; };
+		FEDCA72F1D94CFD400386783 /* CustomTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewController.m; sourceTree = "<group>"; };
+		FEDCA7321D94FE8B00386783 /* SortAlphabetically.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortAlphabetically.h; sourceTree = "<group>"; };
+		FEDCA7331D94FE8B00386783 /* SortAlphabetically.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortAlphabetically.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,33 +58,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FEAE8D311D912814002DF8B4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FEAE8D3C1D912814002DF8B4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				C0FE46AC231BA6DB800BE84B /* libPods-BlurrySearch.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D661505A1E228F3009D8A72 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA4979547060B6B0249F93BA /* libPods-BlurrySearch.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2267D9577226D7ACCEF2F3E7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2D8EC422431BD9FC834BED68 /* Pods-BlurrySearch.debug.xcconfig */,
+				9B1F50E00A4CADCFCFC8FE87 /* Pods-BlurrySearch.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FEAE8D121D912814002DF8B4 = {
 			isa = PBXGroup;
 			children = (
+				FEDCA7311D94FD3D00386783 /* Sort */,
+				FEAE8D711D91415D002DF8B4 /* HandleAddressBook */,
+				FEAE8D6A1D912FE8002DF8B4 /* PinYinCategory */,
 				FEAE8D1D1D912814002DF8B4 /* BlurrySearch */,
-				FEAE8D371D912814002DF8B4 /* BlurrySearchTests */,
-				FEAE8D421D912814002DF8B4 /* BlurrySearchUITests */,
 				FEAE8D1C1D912814002DF8B4 /* Products */,
+				2267D9577226D7ACCEF2F3E7 /* Pods */,
+				0D661505A1E228F3009D8A72 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,8 +99,6 @@
 			isa = PBXGroup;
 			children = (
 				FEAE8D1B1D912814002DF8B4 /* BlurrySearch.app */,
-				FEAE8D341D912814002DF8B4 /* BlurrySearchTests.xctest */,
-				FEAE8D3F1D912814002DF8B4 /* BlurrySearchUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,13 +108,17 @@
 			children = (
 				FEAE8D211D912814002DF8B4 /* AppDelegate.h */,
 				FEAE8D221D912814002DF8B4 /* AppDelegate.m */,
-				FEAE8D241D912814002DF8B4 /* ViewController.h */,
-				FEAE8D251D912814002DF8B4 /* ViewController.m */,
+				FECAFC821D92750E003EAEDA /* TableViewController.h */,
+				FECAFC831D92750E003EAEDA /* TableViewController.m */,
 				FEAE8D271D912814002DF8B4 /* Main.storyboard */,
 				FEAE8D2A1D912814002DF8B4 /* Assets.xcassets */,
 				FEAE8D2C1D912814002DF8B4 /* LaunchScreen.storyboard */,
 				FEAE8D2F1D912814002DF8B4 /* Info.plist */,
 				FEAE8D1E1D912814002DF8B4 /* Supporting Files */,
+				FEDCA72E1D94CFD400386783 /* CustomTableViewController.h */,
+				FEDCA72F1D94CFD400386783 /* CustomTableViewController.m */,
+				FEAE8D511D912CAE002DF8B4 /* AddressBookController.h */,
+				FEAE8D521D912CAE002DF8B4 /* AddressBookController.m */,
 			);
 			path = BlurrySearch;
 			sourceTree = "<group>";
@@ -122,22 +131,35 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		FEAE8D371D912814002DF8B4 /* BlurrySearchTests */ = {
+		FEAE8D6A1D912FE8002DF8B4 /* PinYinCategory */ = {
 			isa = PBXGroup;
 			children = (
-				FEAE8D381D912814002DF8B4 /* BlurrySearchTests.m */,
-				FEAE8D3A1D912814002DF8B4 /* Info.plist */,
+				FEAE8D6B1D912FE8002DF8B4 /* ChineseInclude.h */,
+				FEAE8D6C1D912FE8002DF8B4 /* ChineseInclude.m */,
+				FEAE8D6D1D912FE8002DF8B4 /* PinYinForObjc.h */,
+				FEAE8D6E1D912FE8002DF8B4 /* PinYinForObjc.m */,
 			);
-			path = BlurrySearchTests;
+			path = PinYinCategory;
 			sourceTree = "<group>";
 		};
-		FEAE8D421D912814002DF8B4 /* BlurrySearchUITests */ = {
+		FEAE8D711D91415D002DF8B4 /* HandleAddressBook */ = {
 			isa = PBXGroup;
 			children = (
-				FEAE8D431D912814002DF8B4 /* BlurrySearchUITests.m */,
-				FEAE8D451D912814002DF8B4 /* Info.plist */,
+				FECAFC7C1D921932003EAEDA /* HandleAddressBook.h */,
+				FECAFC7D1D921932003EAEDA /* HandleAddressBook.m */,
+				FECAFC7F1D92291B003EAEDA /* PersonInfoModel.h */,
+				FECAFC801D92291B003EAEDA /* PersonInfoModel.m */,
 			);
-			path = BlurrySearchUITests;
+			path = HandleAddressBook;
+			sourceTree = "<group>";
+		};
+		FEDCA7311D94FD3D00386783 /* Sort */ = {
+			isa = PBXGroup;
+			children = (
+				FEDCA7321D94FE8B00386783 /* SortAlphabetically.h */,
+				FEDCA7331D94FE8B00386783 /* SortAlphabetically.m */,
+			);
+			path = Sort;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,9 +169,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FEAE8D481D912814002DF8B4 /* Build configuration list for PBXNativeTarget "BlurrySearch" */;
 			buildPhases = (
+				26DFB59C60E5743DA1021449 /* [CP] Check Pods Manifest.lock */,
 				FEAE8D171D912814002DF8B4 /* Sources */,
 				FEAE8D181D912814002DF8B4 /* Frameworks */,
 				FEAE8D191D912814002DF8B4 /* Resources */,
+				FDD41A82A5D32C3F8279C3A2 /* [CP] Embed Pods Frameworks */,
+				6F4A47F1847B6899C53B5B39 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -159,42 +184,6 @@
 			productName = BlurrySearch;
 			productReference = FEAE8D1B1D912814002DF8B4 /* BlurrySearch.app */;
 			productType = "com.apple.product-type.application";
-		};
-		FEAE8D331D912814002DF8B4 /* BlurrySearchTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FEAE8D4B1D912814002DF8B4 /* Build configuration list for PBXNativeTarget "BlurrySearchTests" */;
-			buildPhases = (
-				FEAE8D301D912814002DF8B4 /* Sources */,
-				FEAE8D311D912814002DF8B4 /* Frameworks */,
-				FEAE8D321D912814002DF8B4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FEAE8D361D912814002DF8B4 /* PBXTargetDependency */,
-			);
-			name = BlurrySearchTests;
-			productName = BlurrySearchTests;
-			productReference = FEAE8D341D912814002DF8B4 /* BlurrySearchTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		FEAE8D3E1D912814002DF8B4 /* BlurrySearchUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FEAE8D4E1D912814002DF8B4 /* Build configuration list for PBXNativeTarget "BlurrySearchUITests" */;
-			buildPhases = (
-				FEAE8D3B1D912814002DF8B4 /* Sources */,
-				FEAE8D3C1D912814002DF8B4 /* Frameworks */,
-				FEAE8D3D1D912814002DF8B4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FEAE8D411D912814002DF8B4 /* PBXTargetDependency */,
-			);
-			name = BlurrySearchUITests;
-			productName = BlurrySearchUITests;
-			productReference = FEAE8D3F1D912814002DF8B4 /* BlurrySearchUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -208,16 +197,6 @@
 					FEAE8D1A1D912814002DF8B4 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 68JDS85SLB;
-					};
-					FEAE8D331D912814002DF8B4 = {
-						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 68JDS85SLB;
-						TestTargetID = FEAE8D1A1D912814002DF8B4;
-					};
-					FEAE8D3E1D912814002DF8B4 = {
-						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 68JDS85SLB;
-						TestTargetID = FEAE8D1A1D912814002DF8B4;
 					};
 				};
 			};
@@ -235,8 +214,6 @@
 			projectRoot = "";
 			targets = (
 				FEAE8D1A1D912814002DF8B4 /* BlurrySearch */,
-				FEAE8D331D912814002DF8B4 /* BlurrySearchTests */,
-				FEAE8D3E1D912814002DF8B4 /* BlurrySearchUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -252,63 +229,75 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FEAE8D321D912814002DF8B4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FEAE8D3D1D912814002DF8B4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		26DFB59C60E5743DA1021449 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6F4A47F1847B6899C53B5B39 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlurrySearch/Pods-BlurrySearch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FDD41A82A5D32C3F8279C3A2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlurrySearch/Pods-BlurrySearch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FEAE8D171D912814002DF8B4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEAE8D261D912814002DF8B4 /* ViewController.m in Sources */,
+				FEAE8D531D912CAE002DF8B4 /* AddressBookController.m in Sources */,
+				FEAE8D701D912FE8002DF8B4 /* PinYinForObjc.m in Sources */,
+				FECAFC811D92291B003EAEDA /* PersonInfoModel.m in Sources */,
 				FEAE8D231D912814002DF8B4 /* AppDelegate.m in Sources */,
+				FEDCA7341D94FE8B00386783 /* SortAlphabetically.m in Sources */,
+				FECAFC7E1D921932003EAEDA /* HandleAddressBook.m in Sources */,
+				FEAE8D6F1D912FE8002DF8B4 /* ChineseInclude.m in Sources */,
 				FEAE8D201D912814002DF8B4 /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FEAE8D301D912814002DF8B4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FEAE8D391D912814002DF8B4 /* BlurrySearchTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FEAE8D3B1D912814002DF8B4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FEAE8D441D912814002DF8B4 /* BlurrySearchUITests.m in Sources */,
+				FEDCA7301D94CFD400386783 /* CustomTableViewController.m in Sources */,
+				FECAFC841D92750E003EAEDA /* TableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		FEAE8D361D912814002DF8B4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FEAE8D1A1D912814002DF8B4 /* BlurrySearch */;
-			targetProxy = FEAE8D351D912814002DF8B4 /* PBXContainerItemProxy */;
-		};
-		FEAE8D411D912814002DF8B4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FEAE8D1A1D912814002DF8B4 /* BlurrySearch */;
-			targetProxy = FEAE8D401D912814002DF8B4 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FEAE8D271D912814002DF8B4 /* Main.storyboard */ = {
@@ -414,69 +403,31 @@
 		};
 		FEAE8D491D912814002DF8B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D8EC422431BD9FC834BED68 /* Pods-BlurrySearch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BlurrySearch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zhaoName.BlurrySearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
 		FEAE8D4A1D912814002DF8B4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B1F50E00A4CADCFCFC8FE87 /* Pods-BlurrySearch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BlurrySearch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zhaoName.BlurrySearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		FEAE8D4C1D912814002DF8B4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = BlurrySearchTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = zhaoName.BlurrySearchTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BlurrySearch.app/BlurrySearch";
-			};
-			name = Debug;
-		};
-		FEAE8D4D1D912814002DF8B4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = BlurrySearchTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = zhaoName.BlurrySearchTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BlurrySearch.app/BlurrySearch";
-			};
-			name = Release;
-		};
-		FEAE8D4F1D912814002DF8B4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = BlurrySearchUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = zhaoName.BlurrySearchUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = BlurrySearch;
-			};
-			name = Debug;
-		};
-		FEAE8D501D912814002DF8B4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = BlurrySearchUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = zhaoName.BlurrySearchUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = BlurrySearch;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -499,22 +450,7 @@
 				FEAE8D4A1D912814002DF8B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		FEAE8D4B1D912814002DF8B4 /* Build configuration list for PBXNativeTarget "BlurrySearchTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FEAE8D4C1D912814002DF8B4 /* Debug */,
-				FEAE8D4D1D912814002DF8B4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		FEAE8D4E1D912814002DF8B4 /* Build configuration list for PBXNativeTarget "BlurrySearchUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FEAE8D4F1D912814002DF8B4 /* Debug */,
-				FEAE8D501D912814002DF8B4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
