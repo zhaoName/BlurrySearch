@@ -131,11 +131,14 @@
         {
             NSMutableArray *arr = [self.sortDictionary valueForKey:first];
             [arr addObject:data];
-            [self.sortDictionary setObject:first forKey:arr];
+            //重新排序
+            NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES];
+            [arr sortUsingDescriptors:@[descriptor]];
+            [self.sortDictionary setObject:arr forKey:first];
         }
         else
         {
-            [self.sortDictionary setObject:first forKey:data];
+            [self.sortDictionary setObject:@[data] forKey:[self isEnglishLetter:first] ? first : @"#"];
         }
         return self.sortDictionary;
     }
