@@ -17,13 +17,15 @@
 
 @property (nonatomic, strong) NSObject *model; /**< 模型数据*/
 
++ (SortAlphabetically *)shareSortAlphabetically;
+
 /**
  *  把传过来的数据按字母排序 数据可以是字符串也可以是模型，返回按首字母分类、排序好的字典
  *
  *  @param dataArray    要排序的数组
  *  @param propertyName 数组中为字符串则可以为空；若为模型 则propertyName不能为空，是需要排序的属性名
  */
-+ (NSMutableDictionary *)sortAlphabeticallyWithDataArray:(NSMutableArray *)dataArray propertyName:(NSString *)propertyName;
+- (NSMutableDictionary *)sortAlphabeticallyWithDataArray:(NSMutableArray *)dataArray propertyName:(NSString *)propertyName;
 
 /**
  *  模糊查询(可输入中文对应的拼音(不区分大小写),也可直接输入中文） 所查询的数据可以是字符串数组也可以是模型数组
@@ -34,26 +36,29 @@
  *
  *  @return 查询到的数据
  */
-+ (NSMutableArray *)blurrySearchFromDataArray:(NSMutableArray *)dataArray propertyName:(NSString *)propertyName searchString:(NSString *)searchString;
+- (NSMutableArray *)blurrySearchFromDataArray:(NSMutableArray *)dataArray propertyName:(NSString *)propertyName searchString:(NSString *)searchString;
 
 /**
  *  从排序号好的字典中方获取所有的key值 也就是索引值,并排序; 此方法通用
  *  因为从字典中获取的keys值可能是无序的
  */
-+ (NSMutableArray *)sortAllIndexFromDictKey:(NSArray *)keys;
+- (NSMutableArray *)sortAllIndexFromDictKey:(NSArray *)keys;
 
 /**
  *  从排序号好的字典中方获取所有的value值
  *
  *  @param 此方法是为了模糊查询是所用
  */
-+ (NSMutableArray *)fetchAllValuesFromSortDict:(NSMutableDictionary *)sortDict;
+- (NSMutableArray *)fetchAllValuesFromSortDict:(NSMutableDictionary *)sortDict;
 
 /**
  *  获取所有数据去重、排序后的首字母; 此方法只适合非模型数据
  *
  *  @param array 数据
  */
-+ (NSMutableArray *)fetchFirstLetterFromArray:(NSMutableArray *)array;
+- (NSMutableArray *)fetchFirstLetterFromArray:(NSMutableArray *)array;
+
+
+- (NSMutableDictionary *)addDataToSortDictionary:(id)data;
 
 @end

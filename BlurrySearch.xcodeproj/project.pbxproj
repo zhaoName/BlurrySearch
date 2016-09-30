@@ -16,6 +16,7 @@
 		FEAE8D531D912CAE002DF8B4 /* AddressBookController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAE8D521D912CAE002DF8B4 /* AddressBookController.m */; };
 		FEAE8D6F1D912FE8002DF8B4 /* ChineseInclude.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAE8D6C1D912FE8002DF8B4 /* ChineseInclude.m */; };
 		FEAE8D701D912FE8002DF8B4 /* PinYinForObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAE8D6E1D912FE8002DF8B4 /* PinYinForObjc.m */; };
+		FEB750541D9E506F00F1B438 /* AddDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB750531D9E506F00F1B438 /* AddDataViewController.m */; };
 		FECAFC7E1D921932003EAEDA /* HandleAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = FECAFC7D1D921932003EAEDA /* HandleAddressBook.m */; };
 		FECAFC811D92291B003EAEDA /* PersonInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FECAFC801D92291B003EAEDA /* PersonInfoModel.m */; };
 		FECAFC841D92750E003EAEDA /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FECAFC831D92750E003EAEDA /* TableViewController.m */; };
@@ -41,6 +42,8 @@
 		FEAE8D6C1D912FE8002DF8B4 /* ChineseInclude.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChineseInclude.m; sourceTree = "<group>"; };
 		FEAE8D6D1D912FE8002DF8B4 /* PinYinForObjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinYinForObjc.h; sourceTree = "<group>"; };
 		FEAE8D6E1D912FE8002DF8B4 /* PinYinForObjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinYinForObjc.m; sourceTree = "<group>"; };
+		FEB750521D9E506F00F1B438 /* AddDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDataViewController.h; sourceTree = "<group>"; };
+		FEB750531D9E506F00F1B438 /* AddDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDataViewController.m; sourceTree = "<group>"; };
 		FECAFC7C1D921932003EAEDA /* HandleAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandleAddressBook.h; sourceTree = "<group>"; };
 		FECAFC7D1D921932003EAEDA /* HandleAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandleAddressBook.m; sourceTree = "<group>"; };
 		FECAFC7F1D92291B003EAEDA /* PersonInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonInfoModel.h; sourceTree = "<group>"; };
@@ -119,6 +122,8 @@
 				FEDCA72F1D94CFD400386783 /* CustomTableViewController.m */,
 				FEAE8D511D912CAE002DF8B4 /* AddressBookController.h */,
 				FEAE8D521D912CAE002DF8B4 /* AddressBookController.m */,
+				FEB750521D9E506F00F1B438 /* AddDataViewController.h */,
+				FEB750531D9E506F00F1B438 /* AddDataViewController.m */,
 			);
 			path = BlurrySearch;
 			sourceTree = "<group>";
@@ -291,6 +296,7 @@
 				FEDCA7341D94FE8B00386783 /* SortAlphabetically.m in Sources */,
 				FECAFC7E1D921932003EAEDA /* HandleAddressBook.m in Sources */,
 				FEAE8D6F1D912FE8002DF8B4 /* ChineseInclude.m in Sources */,
+				FEB750541D9E506F00F1B438 /* AddDataViewController.m in Sources */,
 				FEAE8D201D912814002DF8B4 /* main.m in Sources */,
 				FEDCA7301D94CFD400386783 /* CustomTableViewController.m in Sources */,
 				FECAFC841D92750E003EAEDA /* TableViewController.m in Sources */,

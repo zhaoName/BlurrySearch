@@ -47,9 +47,9 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             self.dataSource = personInfoArray;
             //key是索引 value是数据源
-            self.sortDict = [SortAlphabetically sortAlphabeticallyWithDataArray:self.dataSource propertyName:@"personName"];
+            self.sortDict = [[SortAlphabetically shareSortAlphabetically] sortAlphabeticallyWithDataArray:self.dataSource propertyName:@"personName"];
             //字典是无序的 不能直接取key当索引
-            self.indexArray = [SortAlphabetically sortAllIndexFromDictKey:self.sortDict.allKeys];
+            self.indexArray = [[SortAlphabetically shareSortAlphabetically] sortAllIndexFromDictKey:self.sortDict.allKeys];
             
             [self.tableView reloadData];
         });
@@ -165,7 +165,7 @@
         return;
     }
     
-    self.searchArray = [SortAlphabetically blurrySearchFromDataArray:[SortAlphabetically fetchAllValuesFromSortDict:self.sortDict] propertyName:@"personName" searchString:searchText];
+    self.searchArray = [[SortAlphabetically shareSortAlphabetically] blurrySearchFromDataArray:[[SortAlphabetically shareSortAlphabetically] fetchAllValuesFromSortDict:self.sortDict] propertyName:@"personName" searchString:searchText];
     if(self.searchArray.count == 0)
     {
         NSLog(@"你所搜索的内容不存在");

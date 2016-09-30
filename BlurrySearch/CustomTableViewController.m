@@ -8,6 +8,7 @@
 
 #import "CustomTableViewController.h"
 #import "SortAlphabetically.h"
+#import "AddDataViewController.h"
 
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
@@ -30,14 +31,32 @@
     self.navigationItem.title = @"自定义";
     self.tableView.tableHeaderView = self.searchController.searchBar;
     [self initDatas];
+    
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(touchRightItem:)];
+    self.navigationItem.rightBarButtonItem = rightItem;
 }
 
 - (void)initDatas
 {
     self.dataSource = [NSMutableArray arrayWithArray:@[@"卢锡安", @"朝向", @"Will Smith", @"卡特琳娜", @"安妮", @"盖伦", @"赵信1", @"赵信a", @"嘉文四世", @"泰达米尔", @"12abd", @"艾希", @"Nicolas Cage", @"易", @"朝阳", @"金克斯", @"亚索", @"ab赵", @"拉克丝", @"🐶想～", @"阿狸", @"维克托", @"杰斯", @"$@+_#", @"布隆", @"艾瑞莉娅", @"贾克斯", @"潘森", @"内瑟斯", @"Tom", @"£&*12"]];
     
-   self.indexArray = [SortAlphabetically fetchFirstLetterFromArray:self.dataSource];
-   self.sortDict = [SortAlphabetically sortAlphabeticallyWithDataArray:self.dataSource propertyName:nil];
+   self.indexArray = [[SortAlphabetically shareSortAlphabetically] fetchFirstLetterFromArray:self.dataSource];
+   self.sortDict = [[SortAlphabetically shareSortAlphabetically] sortAlphabeticallyWithDataArray:self.dataSource propertyName:nil];
+}
+
+- (void)touchRightItem:(UIBarButtonItem *)rightItem
+{
+    AddDataViewController * addDataVC = [[AddDataViewController alloc] init];
+    
+     addDataVC.AddDataBlock = ^(NSString *addData)
+    {
+        //单独添加一个数据
+        [self.dataSource addObject:addData];
+        self.sortDict = [[SortAlphabetically shareSortAlphabetically] addDataToSortDictionary:addData];
+        self.indexArray = [[SortAlphabetically shareSortAlphabetically] sortAllIndexFromDictKey:self.sortDict.allKeys];
+        [self.tableView reloadData];
+    };
+    [self.navigationController pushViewController:addDataVC animated:YES];
 }
 
 #pragma mark -- UITableViewDelegate 
@@ -116,7 +135,7 @@
     //NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", self.searchController.searchBar.text];
     //[self.searchArray addObjectsFromArray:[self.dataSource filteredArrayUsingPredicate:predicate]];
     
-    self.searchArray = [SortAlphabetically blurrySearchFromDataArray:[SortAlphabetically fetchAllValuesFromSortDict:self.sortDict] propertyName:nil searchString:self.searchController.searchBar.text];
+    self.searchArray = [[SortAlphabetically shareSortAlphabetically] blurrySearchFromDataArray:[[SortAlphabetically shareSortAlphabetically] fetchAllValuesFromSortDict:self.sortDict] propertyName:nil searchString:self.searchController.searchBar.text];
     if(self.searchArray.count == 0)
     {
         NSLog(@"你所搜索的内容不存在");
