@@ -10,6 +10,6 @@
 
 @interface AddDataViewController : UIViewController
 
-@property (nonatomic, strong) void(^AddDataBlock)(NSString *);
+@property (nonatomic, strong) void(^AddStringDataBlock)(NSString *);
 
 @end

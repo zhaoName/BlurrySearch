@@ -20,9 +20,4 @@ typedef void(^AddressBookInfoBlock)(NSMutableArray <PersonInfoModel *> *personIn
  */
 + (void)addressBookAuthorization:(AddressBookInfoBlock)block;
 
-/**
- *  获取通讯录中信息
- */
-+ (void)fetchAddressBookInformation:(AddressBookInfoBlock)block;
-
 @end

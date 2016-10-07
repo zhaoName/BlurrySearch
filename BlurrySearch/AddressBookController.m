@@ -10,6 +10,7 @@
 #import "HandleAddressBook.h"
 #import "PersonInfoModel.h"
 #import "SortAlphabetically.h"
+#import "AddModleDataViewController.h"
 
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
@@ -60,7 +61,6 @@
         NSLog(@"%@ %@ %@", model.personName, model.personPhone, model.personNameHeadLetter);
     }
 }
-
 
 #pragma mark -- UITableViewDelegate
 

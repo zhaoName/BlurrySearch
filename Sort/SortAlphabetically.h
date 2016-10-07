@@ -14,9 +14,12 @@
 @property (nonatomic, strong) NSString *headLetter; /**< 每个汉字的首字母*/
 @property (nonatomic, strong) NSString *hanYuPinYin; /**< 转化后的汉语拼音*/
 @property (nonatomic, strong) NSString *capitalLetter; /**< 首字母*/
-
 @property (nonatomic, strong) NSObject *model; /**< 模型数据*/
 
+
+/**
+ *  单例
+ */
 + (SortAlphabetically *)shareSortAlphabetically;
 
 /**
@@ -59,6 +62,6 @@
 - (NSMutableArray *)fetchFirstLetterFromArray:(NSMutableArray *)array;
 
 
-- (NSMutableDictionary *)addDataToSortDictionary:(id)data;
+- (NSMutableDictionary *)addDataToSortDictionary:(id)data propertyName:(NSString *)propertyName;
 
 @end

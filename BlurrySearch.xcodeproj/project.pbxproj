@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7086FB211DA7D6AA00179E70 /* AddModleDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7086FB201DA7D6AA00179E70 /* AddModleDataViewController.m */; };
 		C0FE46AC231BA6DB800BE84B /* libPods-BlurrySearch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4979547060B6B0249F93BA /* libPods-BlurrySearch.a */; };
 		FEAE8D201D912814002DF8B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAE8D1F1D912814002DF8B4 /* main.m */; };
 		FEAE8D231D912814002DF8B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAE8D221D912814002DF8B4 /* AppDelegate.m */; };
@@ -19,13 +20,14 @@
 		FEB750541D9E506F00F1B438 /* AddDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB750531D9E506F00F1B438 /* AddDataViewController.m */; };
 		FECAFC7E1D921932003EAEDA /* HandleAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = FECAFC7D1D921932003EAEDA /* HandleAddressBook.m */; };
 		FECAFC811D92291B003EAEDA /* PersonInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FECAFC801D92291B003EAEDA /* PersonInfoModel.m */; };
-		FECAFC841D92750E003EAEDA /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FECAFC831D92750E003EAEDA /* TableViewController.m */; };
 		FEDCA7301D94CFD400386783 /* CustomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDCA72F1D94CFD400386783 /* CustomTableViewController.m */; };
 		FEDCA7341D94FE8B00386783 /* SortAlphabetically.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDCA7331D94FE8B00386783 /* SortAlphabetically.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2D8EC422431BD9FC834BED68 /* Pods-BlurrySearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlurrySearch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlurrySearch/Pods-BlurrySearch.debug.xcconfig"; sourceTree = "<group>"; };
+		7086FB1F1DA7D6AA00179E70 /* AddModleDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddModleDataViewController.h; sourceTree = "<group>"; };
+		7086FB201DA7D6AA00179E70 /* AddModleDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddModleDataViewController.m; sourceTree = "<group>"; };
 		9B1F50E00A4CADCFCFC8FE87 /* Pods-BlurrySearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlurrySearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlurrySearch/Pods-BlurrySearch.release.xcconfig"; sourceTree = "<group>"; };
 		CA4979547060B6B0249F93BA /* libPods-BlurrySearch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BlurrySearch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEAE8D1B1D912814002DF8B4 /* BlurrySearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlurrySearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,8 +50,6 @@
 		FECAFC7D1D921932003EAEDA /* HandleAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandleAddressBook.m; sourceTree = "<group>"; };
 		FECAFC7F1D92291B003EAEDA /* PersonInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonInfoModel.h; sourceTree = "<group>"; };
 		FECAFC801D92291B003EAEDA /* PersonInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonInfoModel.m; sourceTree = "<group>"; };
-		FECAFC821D92750E003EAEDA /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
-		FECAFC831D92750E003EAEDA /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		FEDCA72E1D94CFD400386783 /* CustomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewController.h; sourceTree = "<group>"; };
 		FEDCA72F1D94CFD400386783 /* CustomTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewController.m; sourceTree = "<group>"; };
 		FEDCA7321D94FE8B00386783 /* SortAlphabetically.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortAlphabetically.h; sourceTree = "<group>"; };
@@ -111,17 +111,17 @@
 			children = (
 				FEAE8D211D912814002DF8B4 /* AppDelegate.h */,
 				FEAE8D221D912814002DF8B4 /* AppDelegate.m */,
-				FECAFC821D92750E003EAEDA /* TableViewController.h */,
-				FECAFC831D92750E003EAEDA /* TableViewController.m */,
 				FEAE8D271D912814002DF8B4 /* Main.storyboard */,
 				FEAE8D2A1D912814002DF8B4 /* Assets.xcassets */,
 				FEAE8D2C1D912814002DF8B4 /* LaunchScreen.storyboard */,
 				FEAE8D2F1D912814002DF8B4 /* Info.plist */,
 				FEAE8D1E1D912814002DF8B4 /* Supporting Files */,
-				FEDCA72E1D94CFD400386783 /* CustomTableViewController.h */,
-				FEDCA72F1D94CFD400386783 /* CustomTableViewController.m */,
 				FEAE8D511D912CAE002DF8B4 /* AddressBookController.h */,
 				FEAE8D521D912CAE002DF8B4 /* AddressBookController.m */,
+				7086FB1F1DA7D6AA00179E70 /* AddModleDataViewController.h */,
+				7086FB201DA7D6AA00179E70 /* AddModleDataViewController.m */,
+				FEDCA72E1D94CFD400386783 /* CustomTableViewController.h */,
+				FEDCA72F1D94CFD400386783 /* CustomTableViewController.m */,
 				FEB750521D9E506F00F1B438 /* AddDataViewController.h */,
 				FEB750531D9E506F00F1B438 /* AddDataViewController.m */,
 			);
@@ -296,10 +296,10 @@
 				FEDCA7341D94FE8B00386783 /* SortAlphabetically.m in Sources */,
 				FECAFC7E1D921932003EAEDA /* HandleAddressBook.m in Sources */,
 				FEAE8D6F1D912FE8002DF8B4 /* ChineseInclude.m in Sources */,
+				7086FB211DA7D6AA00179E70 /* AddModleDataViewController.m in Sources */,
 				FEB750541D9E506F00F1B438 /* AddDataViewController.m in Sources */,
 				FEAE8D201D912814002DF8B4 /* main.m in Sources */,
 				FEDCA7301D94CFD400386783 /* CustomTableViewController.m in Sources */,
-				FECAFC841D92750E003EAEDA /* TableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -72,7 +72,9 @@
 
 
 #pragma mark -- 获取联系人信息
-//获取联系人信息
+/**
+ *  获取通讯录中信息
+ */
 + (void)fetchAddressBookInformation:(AddressBookInfoBlock)block
 {
     if(iOS9_LATER){

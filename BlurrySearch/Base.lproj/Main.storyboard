@@ -1,14 +1,138 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="35U-xh-q0l">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="35U-xh-q0l">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
+        <!--Add Modle Data View Controller-->
+        <scene sceneID="9p8-Ol-HOm">
+            <objects>
+                <viewController id="TG1-YI-hLH" customClass="AddModleDataViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e7N-Zl-Xor"/>
+                        <viewControllerLayoutGuide type="bottom" id="g17-wa-yWi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oQJ-BX-twN">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入姓名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pr5-x0-Bie">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y7y-3B-n2o">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.050980392156862744" green="0.49411764705882355" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="保存">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="59" y="280" width="202" height="40"/>
+                                </variation>
+                                <connections>
+                                    <action selector="touchSaveBuuton:" destination="TG1-YI-hLH" eventType="touchUpInside" id="WxP-P7-BcR"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V4H-vo-Umy">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="V4H-vo-Umy" firstAttribute="top" secondItem="Pr5-x0-Bie" secondAttribute="bottom" constant="32" id="9ZY-8X-61Y"/>
+                            <constraint firstAttribute="trailing" secondItem="Y7y-3B-n2o" secondAttribute="trailing" constant="59" id="E1s-wv-Aq3"/>
+                            <constraint firstItem="Y7y-3B-n2o" firstAttribute="top" secondItem="V4H-vo-Umy" secondAttribute="bottom" constant="43" id="Vcy-hF-NJm"/>
+                            <constraint firstAttribute="trailing" secondItem="Pr5-x0-Bie" secondAttribute="trailing" constant="22" id="XeG-CM-v8r"/>
+                            <constraint firstItem="Pr5-x0-Bie" firstAttribute="top" secondItem="e7N-Zl-Xor" secondAttribute="bottom" constant="81" id="fXq-EZ-Qe1"/>
+                            <constraint firstItem="Y7y-3B-n2o" firstAttribute="leading" secondItem="oQJ-BX-twN" secondAttribute="leading" constant="59" id="iUC-kB-fEF"/>
+                            <constraint firstItem="V4H-vo-Umy" firstAttribute="leading" secondItem="oQJ-BX-twN" secondAttribute="leading" constant="23" id="rYH-RX-fEO"/>
+                            <constraint firstItem="Pr5-x0-Bie" firstAttribute="leading" secondItem="oQJ-BX-twN" secondAttribute="leading" constant="23" id="sai-yg-nb1"/>
+                            <constraint firstAttribute="trailing" secondItem="V4H-vo-Umy" secondAttribute="trailing" constant="22" id="uoN-hs-r9q"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Pr5-x0-Bie"/>
+                                <exclude reference="Y7y-3B-n2o"/>
+                                <exclude reference="V4H-vo-Umy"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="XeG-CM-v8r"/>
+                                <exclude reference="fXq-EZ-Qe1"/>
+                                <exclude reference="sai-yg-nb1"/>
+                                <exclude reference="9ZY-8X-61Y"/>
+                                <exclude reference="rYH-RX-fEO"/>
+                                <exclude reference="uoN-hs-r9q"/>
+                                <exclude reference="E1s-wv-Aq3"/>
+                                <exclude reference="Vcy-hF-NJm"/>
+                                <exclude reference="iUC-kB-fEF"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Pr5-x0-Bie"/>
+                                <include reference="Y7y-3B-n2o"/>
+                                <include reference="V4H-vo-Umy"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="XeG-CM-v8r"/>
+                                <include reference="fXq-EZ-Qe1"/>
+                                <include reference="sai-yg-nb1"/>
+                                <include reference="9ZY-8X-61Y"/>
+                                <include reference="rYH-RX-fEO"/>
+                                <include reference="uoN-hs-r9q"/>
+                                <include reference="E1s-wv-Aq3"/>
+                                <include reference="Vcy-hF-NJm"/>
+                                <include reference="iUC-kB-fEF"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="nameTextField" destination="Pr5-x0-Bie" id="Coj-Sd-UCh"/>
+                        <outlet property="phoneTextField" destination="V4H-vo-Umy" id="FO7-1g-Eyt"/>
+                        <outlet property="touchSaveButton" destination="Y7y-3B-n2o" id="xHX-sH-lEx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VEQ-Ac-s8a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1897.5" y="258"/>
+        </scene>
+        <!--Address Book Controller-->
+        <scene sceneID="aWO-8u-pyN">
+            <objects>
+                <viewController id="1C8-jt-e1F" customClass="AddressBookController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jCi-3O-5gp"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Sp-Dp-9oo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LTv-aq-IrK">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Edx-6U-GRZ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="SMP-Eb-gHs">
+                            <connections>
+                                <action selector="touchAddressBookRightItem:" destination="1C8-jt-e1F" id="hJG-at-npZ"/>
+                                <segue destination="TG1-YI-hLH" kind="show" id="kjw-TB-DUI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eFU-sG-yOf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1324.5" y="258"/>
+        </scene>
         <!--模糊查询-->
         <scene sceneID="CgJ-Lt-cdn">
             <objects>
-                <tableViewController id="xMQ-vL-1Rg" customClass="TableViewController" sceneMemberID="viewController">
+                <tableViewController id="xMQ-vL-1Rg" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="xv6-ee-I4P">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,7 +144,7 @@
                                         <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZMB-G3-Ohc" id="vmN-k7-Kun">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="通讯录-模糊查询" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aq5-62-ung">
@@ -69,12 +193,15 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="1C8-jt-e1F" kind="show" id="2Y3-8O-XLL"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Fi2-kO-lgI">
                                         <rect key="frame" x="0.0" y="108" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fi2-kO-lgI" id="84r-Kn-s1T">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自定义数据 - 模糊查询" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvS-RY-Lzw">
@@ -123,6 +250,9 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="axO-eA-ZvO" kind="show" id="Ud9-Fs-Xil"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -138,6 +268,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SBh-GH-Rbi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="708" y="433.5"/>
+        </scene>
+        <!--Custom Table View Controller-->
+        <scene sceneID="mDt-Qo-VHP">
+            <objects>
+                <tableViewController id="axO-eA-ZvO" customClass="CustomTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="8WT-7d-PAe">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="axO-eA-ZvO" id="bDi-qP-7Q9"/>
+                            <outlet property="delegate" destination="axO-eA-ZvO" id="XyJ-Uf-c8V"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="FH7-ql-quy">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="jSa-B6-DW5">
+                            <connections>
+                                <action selector="touchRightBarItem:" destination="axO-eA-ZvO" id="IF6-6G-gp4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xWD-t4-G4W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1335" y="736.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="o1b-hh-AVP">

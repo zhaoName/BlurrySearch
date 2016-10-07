@@ -22,6 +22,9 @@
 @property (nonatomic, strong) UISearchController *searchController;
 @property (nonatomic, strong) NSMutableArray *searchArray; /**< 搜索数据源*/
 
+
+- (IBAction)touchRightBarItem:(UIBarButtonItem *)sender;
+
 @end
 
 @implementation CustomTableViewController
@@ -31,9 +34,6 @@
     self.navigationItem.title = @"自定义";
     self.tableView.tableHeaderView = self.searchController.searchBar;
     [self initDatas];
-    
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(touchRightItem:)];
-    self.navigationItem.rightBarButtonItem = rightItem;
 }
 
 - (void)initDatas
@@ -44,15 +44,15 @@
    self.sortDict = [[SortAlphabetically shareSortAlphabetically] sortAlphabeticallyWithDataArray:self.dataSource propertyName:nil];
 }
 
-- (void)touchRightItem:(UIBarButtonItem *)rightItem
+- (IBAction)touchRightBarItem:(UIBarButtonItem *)sender
 {
     AddDataViewController * addDataVC = [[AddDataViewController alloc] init];
     
-     addDataVC.AddDataBlock = ^(NSString *addData)
+     addDataVC.AddStringDataBlock = ^(NSString *addData)
     {
         //单独添加一个数据
         [self.dataSource addObject:addData];
-        self.sortDict = [[SortAlphabetically shareSortAlphabetically] addDataToSortDictionary:addData];
+        self.sortDict = [[SortAlphabetically shareSortAlphabetically] addDataToSortDictionary:addData propertyName:nil];
         self.indexArray = [[SortAlphabetically shareSortAlphabetically] sortAllIndexFromDictKey:self.sortDict.allKeys];
         [self.tableView reloadData];
     };

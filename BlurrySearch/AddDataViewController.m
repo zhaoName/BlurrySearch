@@ -37,7 +37,7 @@
 
 - (void)touchSaveBtn:(UIButton *)btn
 {
-    self.AddDataBlock(self.textField.text);
+    self.AddStringDataBlock(self.textField.text);
     [self.navigationController popViewControllerAnimated:YES];
 }
 

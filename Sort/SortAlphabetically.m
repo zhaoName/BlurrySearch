@@ -17,6 +17,7 @@
 
 @implementation SortAlphabetically
 
+//单例
 + (SortAlphabetically *)shareSortAlphabetically
 {
     static SortAlphabetically *sort = nil;
@@ -27,6 +28,7 @@
     });
     return sort;
 }
+
 #pragma mark -- 排序、分类
 //排序
 - (NSMutableDictionary *)sortAlphabeticallyWithDataArray:(NSMutableArray *)dataArray propertyName:(NSString *)propertyName
@@ -122,29 +124,48 @@
 
 #pragma mark -- 添加数据
 
-- (NSMutableDictionary *)addDataToSortDictionary:(id)data
+- (NSMutableDictionary *)addDataToSortDictionary:(id)data propertyName:(NSString *)propertyName
 {
-    if([data isKindOfClass:[NSString class]])
+    NSDictionary *addDict = [self distinguishDataBetweenStringDataAndModelData:[NSMutableArray arrayWithObject:data] propertyName:propertyName];
+    if(addDict.count <= 0) return nil;
+    
+    SortAlphabetically *sort = [addDict.allValues.firstObject firstObject];
+    //添加字符串数组
+    if ([addDict.allKeys.firstObject isEqualToString:@"string"])
     {
-        NSString *first = [[self chineseToPinYin:data] substringToIndex:1];
-        if([self.sortDictionary.allKeys containsObject:first])
+        NSString *first = [[self chineseToPinYin:sort.initialStr] substringToIndex:1];
+        if ([self.sortDictionary.allKeys containsObject:first]) //添加数据的首字母已存在
         {
             NSMutableArray *arr = [self.sortDictionary valueForKey:first];
-            [arr addObject:data];
+            [arr addObject:sort.initialStr];
             //重新排序
             NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES];
             [arr sortUsingDescriptors:@[descriptor]];
             [self.sortDictionary setObject:arr forKey:first];
         }
-        else
+        else //不存在
         {
-            [self.sortDictionary setObject:@[data] forKey:[self isEnglishLetter:first] ? first : @"#"];
+            [self.sortDictionary setObject:@[sort.initialStr] forKey:[self isEnglishLetter:first] ? first : @"#"];
         }
         return self.sortDictionary;
     }
-    else
+    else //添加模型数数组
     {
-        return nil;
+        NSString *first = [[self chineseToPinYin:sort.initialStr] substringToIndex:1];
+        if ([self.sortDictionary.allKeys containsObject:first]) //添加数据的首字母已存在
+        {
+            NSMutableArray *arr = [self.sortDictionary valueForKey:first];
+            [arr addObject:sort.model];
+            //重新排序
+            NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES];
+            [arr sortUsingDescriptors:@[descriptor]];
+            [self.sortDictionary setObject:arr forKey:first];
+        }
+        else //不存在
+        {
+            [self.sortDictionary setObject:@[sort.model] forKey:[self isEnglishLetter:first] ? first : @"#"];
+        }
+        return self.sortDictionary;
     }
 }
 
