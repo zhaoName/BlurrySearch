@@ -62,6 +62,12 @@
 - (NSMutableArray *)fetchFirstLetterFromArray:(NSMutableArray *)array;
 
 
+
+/**
+ *  添加字符串数据或模型数据
+ *
+ *  @return 添加数据后重新排序的字典
+ */
 - (NSMutableDictionary *)addDataToSortDictionary:(id)data propertyName:(NSString *)propertyName;
 
 @end

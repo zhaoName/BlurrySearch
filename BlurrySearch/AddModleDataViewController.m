@@ -25,19 +25,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    self.touchSaveButton.layer.cornerRadius = 8.0;
 }
 
 
 
 - (IBAction)touchSaveBuuton:(UIButton *)sender
 {
+    //输入规范在这不判断 只要不为空就可以
+    if (self.nameTextField.text.length <= 0 || self.phoneTextField.text.length <= 0 ) return;
+    
     PersonInfoModel *model = [[PersonInfoModel alloc] init];
     model.personName = self.nameTextField.text;
     model.personPhone = [NSMutableArray arrayWithObject:self.phoneTextField.text];
-    model.personNameHeadLetter = @"A";
-    self.AddModelDataBlock(@"mmode");
     
+    if ([self.delegate respondsToSelector:@selector(addModelDataDelegate:)])
+    {
+        [self.delegate addModelDataDelegate:model];
+    }
     [self.navigationController popViewControllerAnimated:YES];
 }
 @end

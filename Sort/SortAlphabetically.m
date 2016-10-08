@@ -123,9 +123,10 @@
 }
 
 #pragma mark -- 添加数据
-
+//添加数据
 - (NSMutableDictionary *)addDataToSortDictionary:(id)data propertyName:(NSString *)propertyName
 {
+    //区分字符串数据 和模型数据
     NSDictionary *addDict = [self distinguishDataBetweenStringDataAndModelData:[NSMutableArray arrayWithObject:data] propertyName:propertyName];
     if(addDict.count <= 0) return nil;
     
@@ -157,7 +158,7 @@
             NSMutableArray *arr = [self.sortDictionary valueForKey:first];
             [arr addObject:sort.model];
             //重新排序
-            NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES];
+            NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"personName" ascending:YES];
             [arr sortUsingDescriptors:@[descriptor]];
             [self.sortDictionary setObject:arr forKey:first];
         }

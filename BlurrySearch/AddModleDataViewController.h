@@ -9,8 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "PersonInfoModel.h"
 
+@protocol AddModleDataViewControllerDelegate <NSObject>
+
+- (void)addModelDataDelegate:(PersonInfoModel *)model;
+
+@end
+
 @interface AddModleDataViewController : UIViewController
 
-@property (nonatomic, strong) void(^AddModelDataBlock)(NSString *);
+@property (nonatomic, weak) id<AddModleDataViewControllerDelegate> delegate;
 
 @end

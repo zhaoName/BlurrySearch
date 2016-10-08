@@ -15,7 +15,7 @@
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
-@interface AddressBookController ()<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
+@interface AddressBookController ()<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, AddModleDataViewControllerDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataSource; /**< 数据源*/
@@ -23,7 +23,6 @@
 @property (nonatomic, strong) NSMutableDictionary *sortDict; /**< 排序后的数据源*/
 @property (nonatomic, strong) NSMutableArray *searchArray; /**< 搜索结果*/
 
-@property (nonatomic, strong) UISearchController *searchController;
 @property (nonatomic, strong) UISearchBar *searchBar;
 @property (nonatomic, strong) UIView *statueView;
 
@@ -55,11 +54,26 @@
             [self.tableView reloadData];
         });
     }];
-    
-    for(PersonInfoModel *model in self.dataSource)
+}
+
+#pragma mark -- 添加模型数据
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"AddModleDataViewController"])
     {
-        NSLog(@"%@ %@ %@", model.personName, model.personPhone, model.personNameHeadLetter);
+        AddModleDataViewController *addModelVC = segue.destinationViewController;
+        addModelVC.delegate = self;
     }
+}
+//代理
+- (void)addModelDataDelegate:(PersonInfoModel *)model
+{
+    //单独添加一个数据
+    [self.dataSource addObject:model];
+    self.sortDict = [[SortAlphabetically shareSortAlphabetically] addDataToSortDictionary:model propertyName:@"personName"];
+    self.indexArray = [[SortAlphabetically shareSortAlphabetically] sortAllIndexFromDictKey:self.sortDict.allKeys];
+    [self.tableView reloadData];
 }
 
 #pragma mark -- UITableViewDelegate
