@@ -63,7 +63,7 @@
 {
     NSMutableArray *values = [[NSMutableArray alloc] init];
     //按字母顺序 取所有的value
-    NSMutableArray *keys = [self sortAllIndexFromDictKey:sortDict.allKeys];
+    NSMutableArray *keys = [self sortAllKeysFromDictKey:sortDict.allKeys];
     for(NSString *key in keys)
     {
         [values addObjectsFromArray:sortDict[key]];
@@ -74,7 +74,7 @@
 #pragma mark -- 索引
 
 //获取所有的key 也就是索引 此方法通用
-- (NSMutableArray *)sortAllIndexFromDictKey:(NSArray *)keys
+- (NSMutableArray *)sortAllKeysFromDictKey:(NSArray *)keys
 {
     NSMutableArray *keyArr = [keys mutableCopy];
     //排序
@@ -384,7 +384,7 @@
     
     for(SortAlphabetically *sort in array)
     {
-        //查找的字符串中不包含中文
+        //输入的查找字符串中不包含中文
         if(searchString.length > 0 && ![self isIncludeChineseInString:searchString])
         {
             tempString = [self chineseToPinYin:sort.initialStr]; //转化为拼音
@@ -395,7 +395,7 @@
                 [searchArray addObject:[type isEqualToString:@"string"] ? sort.initialStr : sort.model];
             }
         }
-        //查找的字符串中包含中文
+        //输入的查找字符串包含中文
         else if(searchString.length > 0 && [self isIncludeChineseInString:searchString])
         {
             NSRange range = [sort.initialStr rangeOfString:searchString options:NSCaseInsensitiveSearch];

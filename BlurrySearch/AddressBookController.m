@@ -46,10 +46,10 @@
     [HandleAddressBook addressBookAuthorization:^(NSMutableArray<PersonInfoModel *> *personInfoArray) {
         dispatch_async(dispatch_get_main_queue(), ^{
             self.dataSource = personInfoArray;
-            //key是索引 value是数据源
+            // key是索引 value是数据源
             self.sortDict = [[SortAlphabetically shareSortAlphabetically] sortAlphabeticallyWithDataArray:self.dataSource propertyName:@"personName"];
-            //字典是无序的 不能直接取key当索引
-            self.indexArray = [[SortAlphabetically shareSortAlphabetically] sortAllIndexFromDictKey:self.sortDict.allKeys];
+            // 字典是无序的 不能直接取key当索引
+            self.indexArray = [[SortAlphabetically shareSortAlphabetically] sortAllKeysFromDictKey:self.sortDict.allKeys];
             
             [self.tableView reloadData];
         });
@@ -66,13 +66,13 @@
         addModelVC.delegate = self;
     }
 }
-//代理
+// 代理
 - (void)addModelDataDelegate:(PersonInfoModel *)model
 {
-    //单独添加一个数据
+    // 单独添加一个数据
     [self.dataSource addObject:model];
     self.sortDict = [[SortAlphabetically shareSortAlphabetically] addDataToSortDictionary:model propertyName:@"personName"];
-    self.indexArray = [[SortAlphabetically shareSortAlphabetically] sortAllIndexFromDictKey:self.sortDict.allKeys];
+    self.indexArray = [[SortAlphabetically shareSortAlphabetically] sortAllKeysFromDictKey:self.sortDict.allKeys];
     [self.tableView reloadData];
 }
 
@@ -123,7 +123,7 @@
     return cell;
 }
 
-//区头
+// 区头
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if(self.searchBar.text.length > 0) return nil;
@@ -131,7 +131,7 @@
     return self.indexArray[section];
 }
 
-//右侧索引
+// 右侧索引
 - (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
     if(self.searchBar.text.length > 0) return nil;
@@ -141,7 +141,7 @@
 
 #pragma mark -- UISearchBarDelegate
 
-//开始编辑搜索框
+// 开始编辑搜索框
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
     [UIView animateWithDuration:0.3 animations:^{
@@ -155,7 +155,7 @@
     self.statueView.hidden = NO;
 }
 
-//点击取消按钮
+// 点击取消按钮
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
 {
     [UIView animateWithDuration:0.3 animations:^{
@@ -169,7 +169,7 @@
     }];
 }
 
-//搜索框内容变化
+// 搜索框内容变化
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
     [self.searchArray removeAllObjects];

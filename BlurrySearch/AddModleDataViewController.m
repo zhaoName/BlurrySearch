@@ -32,7 +32,7 @@
 
 - (IBAction)touchSaveBuuton:(UIButton *)sender
 {
-    //输入规范在这不判断 只要不为空就可以
+    // 输入规范在这不做判断 只要不为空就可以
     if (self.nameTextField.text.length <= 0 || self.phoneTextField.text.length <= 0 ) return;
     
     PersonInfoModel *model = [[PersonInfoModel alloc] init];

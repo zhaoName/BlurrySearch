@@ -45,7 +45,7 @@
  *  从排序号好的字典中方获取所有的key值 也就是索引值,并排序; 此方法通用
  *  因为从字典中获取的keys值可能是无序的
  */
-- (NSMutableArray *)sortAllIndexFromDictKey:(NSArray *)keys;
+- (NSMutableArray *)sortAllKeysFromDictKey:(NSArray *)keys;
 
 /**
  *  从排序号好的字典中方获取所有的value值

@@ -53,7 +53,7 @@
         //单独添加一个数据
         [self.dataSource addObject:addData];
         self.sortDict = [[SortAlphabetically shareSortAlphabetically] addDataToSortDictionary:addData propertyName:nil];
-        self.indexArray = [[SortAlphabetically shareSortAlphabetically] sortAllIndexFromDictKey:self.sortDict.allKeys];
+        self.indexArray = [[SortAlphabetically shareSortAlphabetically] sortAllKeysFromDictKey:self.sortDict.allKeys];
         [self.tableView reloadData];
     };
     [self.navigationController pushViewController:addDataVC animated:YES];
