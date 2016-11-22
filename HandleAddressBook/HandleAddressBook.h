@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "PersonInfoModel.h"
 
-typedef void(^AddressBookInfoBlock)(NSMutableArray <PersonInfoModel *> *personInfoArray);
+typedef void(^AddressBookInfoBlock)(NSMutableArray<PersonInfoModel *> *personInfoArray);
 
 @interface HandleAddressBook : NSObject
 

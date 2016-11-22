@@ -22,7 +22,7 @@
 		FECAFC7E1D921932003EAEDA /* HandleAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = FECAFC7D1D921932003EAEDA /* HandleAddressBook.m */; };
 		FECAFC811D92291B003EAEDA /* PersonInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FECAFC801D92291B003EAEDA /* PersonInfoModel.m */; };
 		FEDCA7301D94CFD400386783 /* CustomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDCA72F1D94CFD400386783 /* CustomTableViewController.m */; };
-		FEDCA7341D94FE8B00386783 /* SortAlphabetically.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDCA7331D94FE8B00386783 /* SortAlphabetically.m */; };
+		FEF58E631DE41DBF001FE6C4 /* SortAlphabetically.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF58E621DE41DBF001FE6C4 /* SortAlphabetically.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,8 +54,8 @@
 		FECAFC801D92291B003EAEDA /* PersonInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonInfoModel.m; sourceTree = "<group>"; };
 		FEDCA72E1D94CFD400386783 /* CustomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewController.h; sourceTree = "<group>"; };
 		FEDCA72F1D94CFD400386783 /* CustomTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewController.m; sourceTree = "<group>"; };
-		FEDCA7321D94FE8B00386783 /* SortAlphabetically.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortAlphabetically.h; sourceTree = "<group>"; };
-		FEDCA7331D94FE8B00386783 /* SortAlphabetically.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortAlphabetically.m; sourceTree = "<group>"; };
+		FEF58E611DE41DBF001FE6C4 /* SortAlphabetically.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortAlphabetically.h; sourceTree = "<group>"; };
+		FEF58E621DE41DBF001FE6C4 /* SortAlphabetically.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortAlphabetically.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,8 +164,8 @@
 		FEDCA7311D94FD3D00386783 /* Sort */ = {
 			isa = PBXGroup;
 			children = (
-				FEDCA7321D94FE8B00386783 /* SortAlphabetically.h */,
-				FEDCA7331D94FE8B00386783 /* SortAlphabetically.m */,
+				FEF58E611DE41DBF001FE6C4 /* SortAlphabetically.h */,
+				FEF58E621DE41DBF001FE6C4 /* SortAlphabetically.m */,
 			);
 			path = Sort;
 			sourceTree = "<group>";
@@ -295,9 +295,9 @@
 			files = (
 				FEAE8D531D912CAE002DF8B4 /* AddressBookController.m in Sources */,
 				FEAE8D701D912FE8002DF8B4 /* PinYinForObjc.m in Sources */,
+				FEF58E631DE41DBF001FE6C4 /* SortAlphabetically.m in Sources */,
 				FECAFC811D92291B003EAEDA /* PersonInfoModel.m in Sources */,
 				FEAE8D231D912814002DF8B4 /* AppDelegate.m in Sources */,
-				FEDCA7341D94FE8B00386783 /* SortAlphabetically.m in Sources */,
 				FECAFC7E1D921932003EAEDA /* HandleAddressBook.m in Sources */,
 				FEAE8D6F1D912FE8002DF8B4 /* ChineseInclude.m in Sources */,
 				7086FB211DA7D6AA00179E70 /* AddModleDataViewController.m in Sources */,

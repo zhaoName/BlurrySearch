@@ -33,15 +33,12 @@
 //排序
 - (NSMutableDictionary *)sortAlphabeticallyWithDataArray:(NSMutableArray *)dataArray propertyName:(NSString *)propertyName
 {
-    NSMutableArray *tempArr = [[NSMutableArray alloc] init];
     //区分字符串数据 和模型数组
     NSDictionary *dict = [self distinguishDataBetweenStringDataAndModelData:dataArray propertyName:propertyName];
     
     if(dict.count <= 0) return nil;
-    //按字母排序(重新赋值)
-    tempArr = [self sortWithHeadLetterFromDataArray:dict.allValues.firstObject];
-    //按首字母分类
-    [self classifyDataWithCapitalLatter:tempArr type:dict.allKeys.firstObject];
+    //按字母排序(重新赋值),分类
+    [self sortWithHeadLetterFromDataArray:dict.allValues.firstObject type:dict.allKeys.firstObject];
     
     return self.sortDictionary;
 }
@@ -135,34 +132,34 @@
     if ([addDict.allKeys.firstObject isEqualToString:@"string"])
     {
         NSString *first = [[self chineseToPinYin:sort.initialStr] substringToIndex:1];
-        if ([self.sortDictionary.allKeys containsObject:first]) //添加数据的首字母已存在
+        if ([self.sortDictionary.allKeys containsObject:first]) // 添加数据的首字母已存在
         {
             NSMutableArray *arr = [self.sortDictionary valueForKey:first];
             [arr addObject:sort.initialStr];
-            //重新排序
+            // 重新排序
             NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES];
             [arr sortUsingDescriptors:@[descriptor]];
             [self.sortDictionary setObject:arr forKey:first];
         }
-        else //不存在
+        else // 不存在
         {
             [self.sortDictionary setObject:@[sort.initialStr] forKey:[self isEnglishLetter:first] ? first : @"#"];
         }
         return self.sortDictionary;
     }
-    else //添加模型数数组
+    else // 添加模型数数组
     {
         NSString *first = [[self chineseToPinYin:sort.initialStr] substringToIndex:1];
-        if ([self.sortDictionary.allKeys containsObject:first]) //添加数据的首字母已存在
+        if ([self.sortDictionary.allKeys containsObject:first]) // 添加数据的首字母已存在
         {
             NSMutableArray *arr = [self.sortDictionary valueForKey:first];
             [arr addObject:sort.model];
-            //重新排序
+            // 重新排序
             NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"personName" ascending:YES];
             [arr sortUsingDescriptors:@[descriptor]];
             [self.sortDictionary setObject:arr forKey:first];
         }
-        else //不存在
+        else // 不存在
         {
             [self.sortDictionary setObject:@[sort.model] forKey:[self isEnglishLetter:first] ? first : @"#"];
         }
@@ -173,7 +170,7 @@
 #pragma mark -- 私有方法
 
 /**
- *  区分字符串数据和模型数组，并取出想要需要排序的属性值
+ *  区分字符串数据和模型数组，并取出需要排序的属性值
  *
  *  @param dataArray    字符串数据或模型数组
  *  @param propertyName 需要排序的属性名
@@ -187,17 +184,18 @@
     NSMutableArray *tempArr = [NSMutableArray array];
     NSString *type = nil;
     
-    if ([dataArray.firstObject isKindOfClass:[NSString class]]) //字符串
+    if ([dataArray.firstObject isKindOfClass:[NSString class]]) // 字符串
     {
         type = @"string";
         for(NSString *string in dataArray)
         {
             SortAlphabetically *sort = [[SortAlphabetically alloc] init];
-            sort.initialStr = string;
+            sort.initialStr = string; // 原始字符串
+            sort.hanYuPinYin = [self chineseToPinYin:string]; // 汉语转拼音
             [tempArr addObject:sort];
         }
     }
-    else //模型
+    else // 模型
     {
         type = @"model";
         tempArr = [self handleModelFromDataArray:dataArray propertyName:propertyName];
@@ -214,21 +212,22 @@
     unsigned int propertyCount;
     objc_property_t *properties = class_copyPropertyList([dataArray.firstObject class], &propertyCount);
     
-    for (NSObject *object in dataArray) //遍历模型
+    for (NSObject *object in dataArray) // 遍历模型
     {
         SortAlphabetically *sort = [[SortAlphabetically alloc] init];
         sort.model = object;
         
-        for (int i=0; i<propertyCount; i++) //遍历模型中的属性名
+        for (int i=0; i<propertyCount; i++) // 遍历模型中的属性名
         {
             objc_property_t property = properties[i];
-            //获取属性名
+            // 获取属性名
             NSString *proName = [NSString stringWithUTF8String:property_getName(property)];
             
             if ([proName isEqualToString:propertyName])
             {
-                id propertyValue = [object valueForKey:proName]; //获取属性名对应的属性值
-                sort.initialStr = propertyValue;
+                id propertyValue = [object valueForKey:proName]; // 获取属性名对应的属性值
+                sort.initialStr = propertyValue; // 原始字符串
+                sort.hanYuPinYin = [self chineseToPinYin:propertyValue]; // 汉语转拼音
                 [tempArr addObject:sort];
                 break;
             }
@@ -246,83 +245,40 @@
  *
  *  @param dataArray 数据 若为模型则为要排序属性值
  */
-- (NSMutableArray *)sortWithHeadLetterFromDataArray:(NSMutableArray *)dataArray
+- (void)sortWithHeadLetterFromDataArray:(NSMutableArray *)dataArray type:(NSString *)type
 {
-    NSMutableArray *sortArray = [[NSMutableArray alloc] init];
-    NSMutableArray *tempArr = [[NSMutableArray alloc] init];
-    
-    for (SortAlphabetically *sort in dataArray)
-    {
-        NSString *hanYuPinYin = [self chineseToPinYin:sort.initialStr]; //汉语转拼音
-        sort.hanYuPinYin = hanYuPinYin;
-        if([self isEnglishLetter:[hanYuPinYin substringToIndex:1]])
-        {
-            sort.capitalLetter = [hanYuPinYin substringToIndex:1];
-        }
-        else //不是字母
-        {
-            sort.capitalLetter = @"#";
-        }
-    }
-    //按hanYuPinYin属性值排序
+    // 按hanYuPinYin属性值排序
     NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"hanYuPinYin" ascending:YES];
     [dataArray sortUsingDescriptors:@[descriptor]];
     
-    //将首字母不是A-Z的数据 统一放在最后，否则上面分类会出现问题
-    sortArray = [dataArray mutableCopy];
-    for(SortAlphabetically *sort in dataArray)
-    {
-        if(![self isEnglishLetter:[sort.hanYuPinYin substringToIndex:1]])
-        {
-            [sortArray removeObject:sort];
-            [tempArr addObject:sort];
-        }
-    }
-    [tempArr sortUsingDescriptors:@[descriptor]];
-    [sortArray addObjectsFromArray:tempArr];
-    return sortArray;
-}
-
-/**
- *  将按字母排序后的数据 按首字母分类(分类中的数据也是排序好的)
- *
- *  @param tempArr 排序后的数据
- *  @param type    区别字符串数据和模型数组
- */
-- (void)classifyDataWithCapitalLatter:(NSMutableArray *)tempArr type:(NSString *)type
-{
     [self.sortDictionary removeAllObjects];
-    //将按字母排序后的数据 按首字母分类
-    NSString *capital = nil;
-    NSMutableArray *sortArr = [[NSMutableArray alloc] init];
-    for(SortAlphabetically *sort in tempArr)
+    for (SortAlphabetically *sort in dataArray)
     {
-        //首字母相同 加入同一个数组
-        if([capital isEqualToString:sort.capitalLetter])
+        NSString *capital = [self isEnglishLetter:[sort.hanYuPinYin substringToIndex:1]] ? [sort.hanYuPinYin substringToIndex:1] : @"#";
+        // 若字典中已包含此首字母，则直接添加到对应的数组中
+        if([self.sortDictionary.allKeys containsObject:capital])
         {
             if([type isEqualToString:@"string"])
             {
-                [sortArr addObject:sort.initialStr];
+                [self.sortDictionary[capital] addObject:sort.initialStr];
             }
             else if ([type isEqualToString:@"model"])
             {
-                [sortArr addObject:sort.model];
+                [self.sortDictionary[capital] addObject:sort.model];
             }
         }
-        else //首字母不同 重新初始化一个数组
+        else // 若字典中没有此首字母，则添加相应的字典
         {
-            sortArr = [NSMutableArray array];
-            capital = [self isEnglishLetter:[sort.hanYuPinYin substringToIndex:1]] ? [sort.hanYuPinYin substringToIndex:1] : @"#";
-            
+            NSMutableArray *sortArray = [NSMutableArray array];
             if([type isEqualToString:@"string"])
             {
-                [sortArr addObject:sort.initialStr];
+                [sortArray addObject:sort.initialStr];
             }
             else if ([type isEqualToString:@"model"])
             {
-                [sortArr addObject:sort.model];
+                [sortArray addObject:sort.model];
             }
-            [self.sortDictionary setObject:sortArr forKey:capital];
+            [self.sortDictionary setObject:sortArray forKey:capital];
         }
     }
 }
@@ -333,14 +289,14 @@
 - (NSString *)chineseToPinYin:(NSString *)chinese
 {
     NSMutableString *english = [chinese mutableCopy];
-    //转化为带声调的拼音
+    // 转化为带声调的拼音
     CFStringTransform((__bridge CFMutableStringRef)english, NULL, kCFStringTransformMandarinLatin, NO);
-    //转化为不带声调的拼音
+    // 转化为不带声调的拼音
     CFStringTransform((__bridge CFMutableStringRef)english, NULL, kCFStringTransformStripCombiningMarks, NO);
     
-    //去除两端空格和回车
+    // 去除两端空格和回车
     [english stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    //去除中间的空格
+    // 去除中间的空格
     english = (NSMutableString *)[english stringByReplacingOccurrencesOfString:@" " withString:@""];
     
     return [english uppercaseString];
@@ -379,24 +335,22 @@
  */
 - (NSMutableArray *)handleSearchResult:(NSMutableArray *)array searchString:(NSString *)searchString type:(NSString *)type
 {
-    NSMutableArray *searchArray = [[NSMutableArray alloc] init];
-    NSString *tempString = nil;
+    if(searchString.length <= 0) return nil;
     
+    NSMutableArray *searchArray = [[NSMutableArray alloc] init];
     for(SortAlphabetically *sort in array)
     {
-        //输入的查找字符串中不包含中文
-        if(searchString.length > 0 && ![self isIncludeChineseInString:searchString])
+        // 输入的查找字符串中不包含中文
+        if(![self isIncludeChineseInString:searchString])
         {
-            tempString = [self chineseToPinYin:sort.initialStr]; //转化为拼音
-            //判断转化后的拼音是否包含 搜索框中输入的字符
-            NSRange range = [tempString rangeOfString:searchString options:NSCaseInsensitiveSearch];
+            // 判断转化后的拼音是否包含 搜索框中输入的字符
+            NSRange range = [sort.hanYuPinYin rangeOfString:searchString options:NSCaseInsensitiveSearch];
             if(range.length > 0)
             {
                 [searchArray addObject:[type isEqualToString:@"string"] ? sort.initialStr : sort.model];
             }
         }
-        //输入的查找字符串包含中文
-        else if(searchString.length > 0 && [self isIncludeChineseInString:searchString])
+        else // 输入的查找字符串包含中文
         {
             NSRange range = [sort.initialStr rangeOfString:searchString options:NSCaseInsensitiveSearch];
             if(range.length > 0)
