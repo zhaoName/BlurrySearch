@@ -17,7 +17,7 @@
 
 @implementation SortAlphabetically
 
-//单例
+// 单例
 + (SortAlphabetically *)shareSortAlphabetically
 {
     static SortAlphabetically *sort = nil;
@@ -30,14 +30,14 @@
 }
 
 #pragma mark -- 排序、分类
-//排序
+// 排序
 - (NSMutableDictionary *)sortAlphabeticallyWithDataArray:(NSMutableArray *)dataArray propertyName:(NSString *)propertyName
 {
-    //区分字符串数据 和模型数组
+    // 区分字符串数据 和模型数组
     NSDictionary *dict = [self distinguishDataBetweenStringDataAndModelData:dataArray propertyName:propertyName];
     
     if(dict.count <= 0) return nil;
-    //按字母排序(重新赋值),分类
+    // 按字母排序(重新赋值),分类
     [self sortWithHeadLetterFromDataArray:dict.allValues.firstObject type:dict.allKeys.firstObject];
     
     return self.sortDictionary;
@@ -45,21 +45,21 @@
 
 #pragma mark -- 模糊查询
 
-//模糊查询
+// 模糊查询
 - (NSMutableArray *)blurrySearchFromDataArray:(NSMutableArray *)dataArray propertyName:(NSString *)propertyName searchString:(NSString *)searchString
 {
-    //区分字符串数据和模型数组
+    // 区分字符串数据和模型数组
     NSDictionary *dict = [self distinguishDataBetweenStringDataAndModelData:dataArray propertyName:propertyName];
     if(dict.count <= 0) return nil;
-    //查询结果
+    // 查询结果
     return [self handleSearchResult:dict.allValues.firstObject searchString:searchString type:dict.allKeys.firstObject];
 }
 
-//获取所有的value
+// 获取所有的value
 - (NSMutableArray *)fetchAllValuesFromSortDict:(NSMutableDictionary *)sortDict
 {
     NSMutableArray *values = [[NSMutableArray alloc] init];
-    //按字母顺序 取所有的value
+    // 按字母顺序 取所有的value
     NSMutableArray *keys = [self sortAllKeysFromDictKey:sortDict.allKeys];
     for(NSString *key in keys)
     {
@@ -70,15 +70,15 @@
 
 #pragma mark -- 索引
 
-//获取所有的key 也就是索引 此方法通用
+// 获取所有的key 也就是索引 此方法通用
 - (NSMutableArray *)sortAllKeysFromDictKey:(NSArray *)keys
 {
     NSMutableArray *keyArr = [keys mutableCopy];
-    //排序
+    // 排序
     NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES];
     [keyArr sortUsingDescriptors:@[descriptor]];
     
-    //将@“#”放在最后
+    // 将@“#”放在最后
     for(NSString *string in keys)
     {
         if([string isEqualToString:@"#"])
@@ -91,7 +91,7 @@
     return keyArr;
 }
 
-//获取所有的索引  此方法只适合非模型数据
+// 获取所有的索引  此方法只适合非模型数据
 - (NSMutableArray *)fetchFirstLetterFromArray:(NSMutableArray *)array
 {
     NSMutableSet *letterSet =[[NSMutableSet alloc] init];
@@ -108,9 +108,9 @@
             [letterSet addObject:@"#"];
         }
     }
-    //返回去重、排序后所有的首字母
+    // 返回去重、排序后所有的首字母
     NSMutableArray *arr = [NSMutableArray arrayWithArray:[[letterSet objectEnumerator].allObjects sortedArrayUsingSelector:@selector(compare:)]];
-    //若包含@“#”则将其放在最后
+    // 若包含@“#”则将其放在最后
     if([arr containsObject:@"#"])
     {
         [arr removeObject:@"#"];
@@ -120,15 +120,15 @@
 }
 
 #pragma mark -- 添加数据
-//添加数据
+// 添加数据
 - (NSMutableDictionary *)addDataToSortDictionary:(id)data propertyName:(NSString *)propertyName
 {
-    //区分字符串数据 和模型数据
+    // 区分字符串数据 和模型数据
     NSDictionary *addDict = [self distinguishDataBetweenStringDataAndModelData:[NSMutableArray arrayWithObject:data] propertyName:propertyName];
     if(addDict.count <= 0) return nil;
     
     SortAlphabetically *sort = [addDict.allValues.firstObject firstObject];
-    //添加字符串数组
+    // 添加字符串数组
     if ([addDict.allKeys.firstObject isEqualToString:@"string"])
     {
         NSString *first = [[self chineseToPinYin:sort.initialStr] substringToIndex:1];
@@ -181,7 +181,8 @@
 {
     if (dataArray.count <= 0) return nil;
     
-    NSMutableArray *tempArr = [NSMutableArray array];
+    __block NSMutableArray *tempArr = [NSMutableArray array];
+    
     NSString *type = nil;
     
     if ([dataArray.firstObject isKindOfClass:[NSString class]]) // 字符串

@@ -22,9 +22,9 @@
 //授权
 + (void)addressBookAuthorization:(AddressBookInfoBlock)block
 {
-    if(iOS9_LATER) //在iOS9之后获取通讯录用CNContactStore
+    if(iOS9_LATER) // 在iOS9之后获取通讯录用CNContactStore
     {
-        //已经授权了 直接返回
+        // 已经授权了 直接返回
         if([CNContactStore authorizationStatusForEntityType:CNEntityTypeContacts] == CNAuthorizationStatusAuthorized)
         {
             [self fetchAddressBookInformation:block];
@@ -44,7 +44,7 @@
             }
         }];
     }
-    else //在iOS9之前 用ABAddressBookRef获取通讯录
+    else // 在iOS9之前 用ABAddressBookRef获取通讯录
     {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -93,7 +93,7 @@
     NSMutableArray *array = [[NSMutableArray alloc] init];
     
     CNContactStore *contactStore = [[CNContactStore alloc] init];
-    //由keys决定获取联系人的那些信息：姓名 手机号
+    // 由keys决定获取联系人的那些信息：姓名 手机号
     NSArray *keys = @[CNContactGivenNameKey, CNContactFamilyNameKey, CNContactPhoneNumbersKey];
     CNContactFetchRequest *request = [[CNContactFetchRequest alloc] initWithKeysToFetch:keys];
     
@@ -102,14 +102,14 @@
         
         PersonInfoModel *model = [[PersonInfoModel alloc] init];
         
-        //联系人姓名
+        // 联系人姓名
         NSString *name = [NSString stringWithFormat:@"%@%@", contact.familyName ? contact.familyName : @"", contact.givenName ? contact.givenName : @""];
         model.personName = name ? name :@"你叫啥呢";
         
-        //联系人每个拼音首字母
+        // 联系人每个拼音首字母
         model.personNameHeadLetter = [[PinYinForObjc chineseConvertToPinYinHead:model.personName] uppercaseString];
         
-        //联系人手机号
+        // 联系人手机号
         NSArray *phones = contact.phoneNumbers;
         for(CNLabeledValue *labeledValue in phones)
         {
@@ -120,7 +120,7 @@
         [array addObject:model];
     }];
     
-    //把获取到的联系人信息传过去
+    // 把获取到的联系人信息传过去
     block(array);
 }
 
@@ -133,31 +133,31 @@
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
     
     NSMutableArray *array = [[NSMutableArray alloc] init];
-    //创建通讯录对象
+    // 创建通讯录对象
     ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
     
-    //从通讯录中将所有人的信息拷贝出来
+    // 从通讯录中将所有人的信息拷贝出来
     CFArrayRef allPersonInfoArray = ABAddressBookCopyArrayOfAllPeople(addressBook);
     
-    //获取联系人的个数
+    // 获取联系人的个数
     CFIndex personCount = CFArrayGetCount(allPersonInfoArray);
     
     for(int i=0; i<personCount; i++)
     {
         PersonInfoModel *model = [[PersonInfoModel alloc] init];
-        //获取其中每个联系人的信息
+        // 获取其中每个联系人的信息
         ABRecordRef person = CFArrayGetValueAtIndex(allPersonInfoArray, i);
         
-        //联系人姓名
+        // 联系人姓名
         NSString *lastName = (__bridge_transfer NSString *)ABRecordCopyValue(person, kABPersonLastNameProperty);
         NSString *firstName = (__bridge_transfer NSString *)ABRecordCopyValue(person, kABPersonFirstNameProperty);
         NSString *name = [NSString stringWithFormat:@"%@%@", lastName?lastName:@"", firstName?firstName:@""];
         model.personName = name ? name : @"你叫啥呢";
         
-        //联系人每个拼音首字母
+        // 联系人每个拼音首字母
         model.personNameHeadLetter = [[PinYinForObjc chineseConvertToPinYinHead:model.personName] uppercaseString];
         
-        //联系人电话
+        // 联系人电话
         ABMultiValueRef phones = ABRecordCopyValue(person, kABPersonPhoneProperty);
         CFIndex phoneCout = ABMultiValueGetCount(phones);
         for(int j=0; j<phoneCout; j++)
@@ -169,7 +169,7 @@
         
         [array addObject:model];
     }
-    //把获取到的联系人信息传过去
+    // 把获取到的联系人信息传过去
     block(array);
     
     CFRelease(allPersonInfoArray);
